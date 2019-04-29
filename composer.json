@@ -4,8 +4,9 @@
   "description": "Country module for yii 2.0 or higher",
   "require": {
     "codexten/yii-web": "^2.0",
-    "monarobase/country-list": "*",
-    "kartik-v/yii2-widget-select2": "@dev"
+    "symfony/intl": "*",
+    "kartik-v/yii2-widget-select2": "@dev",
+    "yiisoft/yii2-bootstrap": "@dev"
   },
   "autoload": {
     "psr-4": {

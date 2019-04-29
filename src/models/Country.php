@@ -2,9 +2,8 @@
 
 namespace codexten\yii\modules\country\models;
 
-use Symfony\Component\Intl\Currencies;
+use Symfony\Component\Intl\Regions;
 use Yii;
-use yii\helpers\Url;
 
 /**
  * This is the model class for table "{{%country}}".
@@ -58,7 +57,7 @@ class Country extends \codexten\yii\db\ActiveRecord
      */
     public function getName()
     {
-        return Country::getName($this->code);
+        return Regions::getName($this->code);
     }
 
     /**

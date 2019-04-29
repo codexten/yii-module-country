@@ -4,7 +4,7 @@
   "description": "Country module for yii 2.0 or higher",
   "require": {
     "codexten/yii-web": "^2.0",
-    "symfony/intl": "*",
+    "monarobase/country-list": "*",
     "kartik-v/yii2-widget-select2": "@dev"
   },
   "autoload": {
@@ -16,7 +16,7 @@
     "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
+    "config-plugin": {
       "moduleLocale": "config/moduleCountry.php",
       "migrationNamespaces": "config/migrationNamespaces.php"
     }

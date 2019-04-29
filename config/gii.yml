@@ -1,0 +1,12 @@
+params:
+  messageCategory: codexten:module:country
+migration:
+  create_country_table:
+    fields: |
+      code:string(50),
+      is_enabled:boolean
+model:
+  country:
+crud:
+  country:
+    modelClass: codexten\yii\modules\country\models\Country

@@ -6,7 +6,7 @@
     "codexten/yii-web": "^2.0",
     "symfony/intl": "*",
     "kartik-v/yii2-widget-select2": "@dev",
-    "yiisoft/yii2-bootstrap": "@dev"
+    "kartik-v/yii2-widget-switchinput": "*"
   },
   "autoload": {
     "psr-4": {

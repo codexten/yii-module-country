@@ -1,11 +1,11 @@
 <?php
 
 use codexten\yii\modules\country\models\Country;
+use codexten\yii\web\widgets\SwitchInput;
 use kartik\select2\Select2;
-use Symfony\Component\Intl\Currencies;
+use Symfony\Component\Intl\Regions;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-use Symfony\Component\Intl\Regions;
 
 /* @var $this yii\web\View */
 /* @var $model Country */
@@ -27,7 +27,7 @@ use Symfony\Component\Intl\Regions;
                 ],
             ]); ?>
 
-        <?= $form->field($model, 'is_enabled') ?>
+        <?= $form->field($model, 'is_enabled')->widget(SwitchInput::class, []) ?>
 
         <div class="form-group">
 

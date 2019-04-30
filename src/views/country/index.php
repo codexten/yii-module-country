@@ -1,7 +1,9 @@
 <?php
 
+use codexten\yii\modules\country\models\Country;
 use codexten\yii\web\widgets\IndexPage;
 use yii\grid\GridView;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -31,11 +33,20 @@ $this->title = Yii::t('codexten:module:country', 'Countries');
             'label' => Yii::t('codexten:module:country', 'Code'),
         ],
         'name',
-        'is_enabled',
+        [
+            'attribute' => 'is_enabled',
+            'value' => function ($model) {
+                /* @var $model Country */
+
+                return $model->is_enabled ? Yii::t('codexten:module:country',
+                    'yes') : Yii::t('codexten:module:country', 'no');
+
+            },
+        ],
         [
             'class' => 'yii\grid\ActionColumn',
             'options' => ['style' => 'width: 5%'],
-            'template' => '{update} {delete}',
+            'template' => '{update}',
         ],
     ],
 ]); ?>

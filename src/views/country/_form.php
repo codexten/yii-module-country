@@ -1,11 +1,11 @@
 <?php
 
 use codexten\yii\modules\country\models\Country;
-use codexten\yii\web\widgets\SwitchInput;
 use kartik\select2\Select2;
 use Symfony\Component\Intl\Regions;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
+use kartik\switchinput\SwitchInput;
 
 /* @var $this yii\web\View */
 /* @var $model Country */

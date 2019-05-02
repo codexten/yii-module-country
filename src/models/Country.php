@@ -13,6 +13,8 @@ use Yii;
  * @property int $id
  * @property string $code
  * @property int $is_enabled
+ *
+ * @property string $name
  */
 class Country extends \codexten\yii\db\ActiveRecord
 {

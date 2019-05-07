@@ -2,10 +2,10 @@
 
 use codexten\yii\modules\country\models\Country;
 use kartik\select2\Select2;
-use Symfony\Component\Intl\Regions;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use kartik\switchinput\SwitchInput;
+use Symfony\Component\Intl\Countries;
 
 /* @var $this yii\web\View */
 /* @var $model Country */
@@ -18,7 +18,7 @@ use kartik\switchinput\SwitchInput;
 
         <?= $form->field($model, 'code')
             ->widget(Select2::class, [
-                'data' => Regions::getNames(),
+                'data' => Countries::getNames(),
                 'language' => 'de',
                 'options' => ['placeholder' => Yii::t('codexten:module:locale', 'Select Country')],
                 'disabled' => !$model->isNewRecord,

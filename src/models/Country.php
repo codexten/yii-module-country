@@ -2,7 +2,9 @@
 
 namespace codexten\yii\modules\country\models;
 
-use Symfony\Component\Intl\Regions;
+use codexten\yii\db\ActiveRecord;
+use codexten\yii\modules\country\models\query\CountryQuery;
+use Symfony\Component\Intl\Countries;
 use Yii;
 
 /**
@@ -16,7 +18,7 @@ use Yii;
  *
  * @property string $name
  */
-class Country extends \codexten\yii\db\ActiveRecord
+class Country extends ActiveRecord
 {
     //const STATUS_ACTIVE = 1;
     //const STATUS_INACTIVE = 0;
@@ -59,7 +61,7 @@ class Country extends \codexten\yii\db\ActiveRecord
      */
     public function getName()
     {
-        return Regions::getName($this->code);
+        return Countries::getName($this->code);
     }
 
     /**
@@ -135,11 +137,11 @@ class Country extends \codexten\yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return \codexten\yii\modules\country\models\query\CountryQuery the active query used by this AR class.
+     * @return CountryQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \codexten\yii\modules\country\models\query\CountryQuery(get_called_class());
+        return new CountryQuery(get_called_class());
     }
 
     ///**

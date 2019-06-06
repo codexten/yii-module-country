@@ -2,15 +2,13 @@
 
 namespace codexten\yii\modules\country\helpers;
 
-class Country
+/**
+ * Class Country
+ *
+ * @package codexten\yii\modules\country\helpers
+ * @deprecated since 2.1.0
+ */
+class Country extends CountryHelper
 {
-    public static function getNames()
-    {
-        $items = [];
-        foreach (\codexten\yii\modules\country\models\Country::find()->all() as $model) {
-            $items[$model->code] = $model->name;
-        }
 
-        return $items;
-    }
 }

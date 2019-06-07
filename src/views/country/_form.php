@@ -16,18 +16,7 @@ use Symfony\Component\Intl\Countries;
 
         <?php $form = ActiveForm::begin() ?>
 
-        <?= $form->field($model, 'code')
-            ->widget(Select2::class, [
-                'data' => Countries::getNames(),
-                'language' => 'de',
-                'options' => ['placeholder' => Yii::t('codexten:module:locale', 'Select Country')],
-                'disabled' => !$model->isNewRecord,
-                'pluginOptions' => [
-                    'allowClear' => true,
-                ],
-            ]); ?>
-
-        <?= $form->field($model, 'is_enabled')->widget(SwitchInput::class, []) ?>
+        <?= $this->render('form/_fields',compact(['model','form'])) ?>
 
         <div class="form-group">
 

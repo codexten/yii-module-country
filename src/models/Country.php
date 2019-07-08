@@ -123,6 +123,7 @@ class Country extends ActiveRecord
     public function fields()
     {
         $fields = parent::fields();
+        $fields[] = 'name';
 
         return $fields;
     }

@@ -20,7 +20,10 @@
     },
     "config-plugin": {
       "core": "config/core.php",
-      "moduleCountryApi": "config/moduleCountryApi.php",
+      "moduleCountryApi": [
+        "$moduleApi",
+        "config/moduleCountryApi.php"
+      ],
       "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }

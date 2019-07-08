@@ -3,7 +3,8 @@
   "type": "library",
   "description": "Country module for yii 2.0 or higher",
   "require": {
-    "codexten/yii-web": "^2.0",
+    "codexten/yii-web": "~2.0.0",
+    "codexten/yii-module-api": "~2.0.0",
     "symfony/intl": "*",
     "kartik-v/yii2-widget-select2": "@dev",
     "kartik-v/yii2-widget-switchinput": "*"
@@ -18,7 +19,8 @@
       "dev-master": "2.0.x-dev"
     },
     "config-plugin": {
-      "moduleCountry": "config/moduleCountry.php",
+      "core": "config/core.php",
+      "moduleCountryApi": "config/moduleCountryApi.php",
       "migrationNamespaces": "config/migrationNamespaces.php"
     }
   }

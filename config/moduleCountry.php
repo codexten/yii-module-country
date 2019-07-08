@@ -3,9 +3,6 @@
 use codexten\yii\base\Module;
 
 return [
-    'aliases' => [
-        '@moduleCountry' => '@codexten/yii/modules/country',
-    ],
     'modules' => [
         'country' => [
             'class' => Module::class,

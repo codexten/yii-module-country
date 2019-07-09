@@ -18,7 +18,6 @@ return [
                         /* @var $searchModel CountrySearch */
 
                         return $searchModel;
-
                     },
                 ],
             ],

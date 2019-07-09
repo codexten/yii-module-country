@@ -1,8 +1,8 @@
 <?php
-/* @var $_api array */
 
 use codexten\yii\modules\country\models\Country;
-use yii\rest\ActiveController;
+use codexten\yii\modules\country\models\search\CountrySearch;
+use codexten\yii\rest\ActiveController;
 
 return [
     'modules' => [
@@ -11,6 +11,15 @@ return [
                 'country' => [
                     'class' => ActiveController::class,
                     'modelClass' => Country::class,
+                    'newSearchModel' => function () {
+                        $className = '\codexten\yii\modules\country\models\search\CountrySearch';
+                        $searchModel = new $className();
+
+                        /* @var $searchModel CountrySearch */
+
+                        return $searchModel;
+
+                    },
                 ],
             ],
         ],

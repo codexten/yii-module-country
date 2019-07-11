@@ -20,6 +20,7 @@
     },
     "config-plugin": {
       "core": "config/core.php",
+      "moduleCountry": "config/moduleCountry.php",
       "moduleCountryApi": [
         "$moduleApi",
         "config/moduleCountryApi.php"

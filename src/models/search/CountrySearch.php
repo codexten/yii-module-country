@@ -63,9 +63,23 @@ class CountrySearch extends Model implements SearchModelInterface
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
+
         $query->andFilterWhere(['like', 'code', $this->code]);
 
-        //$query->andFilterWhere(['like', , $this->name]);
+        $cname = $this->name;
+        if (!empty($cname)) {
+            $cname = strtolower($cname);
+            foreach (Countries::getNames() as $code => $name) {
+                $name = strtolower($name);
+                if (strpos($name, $cname) !== false) {
+                    $countryCodes[] = $code;
+                }
+            }
+        }
+
+        if (!empty($countryCodes)) {
+            $query->andWhere(['code' => $countryCodes]);
+        }
 
         return $dataProvider;
     }

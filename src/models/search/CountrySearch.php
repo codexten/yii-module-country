@@ -13,6 +13,25 @@ class CountrySearch extends Model implements SearchModelInterface
 {
     use SearchModelTrait;
 
+    public $code;
+    public $name;
+
+    /**
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            [
+                [
+                    'code',
+                    'name',
+                ],
+                'safe',
+            ],
+        ];
+    }
+
     public function search(array $params)
     {
         $query = Country::find();
@@ -44,6 +63,9 @@ class CountrySearch extends Model implements SearchModelInterface
         if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
+        $query->andFilterWhere(['like', 'code', $this->code]);
+
+        //$query->andFilterWhere(['like', , $this->name]);
 
         return $dataProvider;
     }
